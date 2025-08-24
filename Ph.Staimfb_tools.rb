@@ -1,8 +1,8 @@
-= begin
+# begin
 
 $LOAD_PATH.unshift File.expand_path(".", "lib")
 
-require 'MateMatika'
+#require 'MateMatika'
 require 'threadpool'
 require 'io/console'
 require 'net/https'
