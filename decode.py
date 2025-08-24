@@ -1,14 +1,16 @@
 import marshal, imp, struct, time
 
-# paste your blob here (keep as str, not bytes)
-data = '''c\x00\x00\x00\x00\x00\x00\x00\x00\x05\x00\x00\x00@\x00\x00\x00s\xa5...'''
+# Read the obfuscated file
+with open(".Akun/.Rt", "rb") as f:
+    data = f.read()
 
+# Try to interpret it as marshal payload
 code = marshal.loads(data)
 
-# write a valid .pyc file
+# Dump to .pyc
 with open("decoded.pyc", "wb") as f:
     f.write(imp.get_magic())
     f.write(struct.pack("i", int(time.time())))
     marshal.dump(code, f)
 
-print("[+] Saved to decoded.pyc — now run uncompyle6 to decompile it")
+print("[+] Saved to decoded.pyc")
