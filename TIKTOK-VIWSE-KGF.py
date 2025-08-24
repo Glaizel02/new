@@ -25,7 +25,7 @@ w = '\x1b[1;37m'  # White
 # Wait function
 def wait():
     for i in range(100):
-        print(f'\n\n{g}[ + ] Please wait for next submission: {i + 1}/120', end='\r')
+        print(f'\n\n{g}[ + ] Please wait for next submission: {i + 1}/10', end='\r')
         time.sleep(1)
         os.system('clear')
 
@@ -102,4 +102,5 @@ def main():
 
 # Run the script
 if __name__ == "__main__":
+
     main()
